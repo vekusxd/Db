@@ -4,15 +4,16 @@ using TestProjectDomainNew.Entities;
 
 namespace TestProjectDomainNew.Configurations;
 
-public class EmployeesConfiguration : IEntityTypeConfiguration<Employee>
+public class RoleEmployeesConfiguration : IEntityTypeConfiguration<RoleEmployees>
 {
-    public void Configure(EntityTypeBuilder<Employee> builder)
+    public void Configure(EntityTypeBuilder<RoleEmployees> builder)
     {
         builder.HasKey(c => c.Id);
 
         builder
-            .HasOne(r => r.Role)
-            .WithOne(c => c.Employee);
+            .HasOne(r => r.Employee)
+            .WithOne(f => f.Role);
+        
     }
 }
 

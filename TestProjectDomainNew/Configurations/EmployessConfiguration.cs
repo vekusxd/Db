@@ -5,14 +5,18 @@ using TestProjectDomainNew.Entities;
 
 namespace TestProjectDomainNew.Configurations;
 
-public class RoleEmployeesConfiguration : IEntityTypeConfiguration<RoleEmployees>
+public class EmployeesConfiguration : IEntityTypeConfiguration<Employee>
 {
-    public void Configure(EntityTypeBuilder<RoleEmployees> builder)
+    public void Configure(EntityTypeBuilder<Employee> builder)
     {
         builder.HasKey(c => c.Id);
 
         builder
-            .HasOne(r => r.Employee)
-            .WithOne(f => f.Role);
+            .HasOne(r => r.Role)
+            .WithOne(c => c.Employee);
+
+        builder
+            .HasOne(f => f.Order)
+            .WithOne(s => s.Employee);
     }
 }

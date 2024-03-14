@@ -5,7 +5,7 @@ namespace TestProjectDomainNew;
 
 public class CrmDbContext : DbContext
 {
-    public DbSet<Categories> Categories { get; set; }
+    public DbSet<ProductCategories> Categories { get; set; }
     public DbSet<CategoryDishes> CategoryDishes { get; set; }
     public DbSet<Client> Clients { get; set; }
     public DbSet<Delivery> Deliveries { get; set; }

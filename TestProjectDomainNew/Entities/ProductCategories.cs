@@ -1,6 +1,6 @@
 namespace TestProjectDomainNew.Entities;
 
-public class Categories
+public class ProductCategories
 {
     public int Id { get; set; }
     public string Name { get; set; }
